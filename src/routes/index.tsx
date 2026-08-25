@@ -4,18 +4,11 @@ import { createFileRoute } from '@tanstack/react-router'
 export const Route = createFileRoute('/')({ component: Home })
 
 const projects = [
-  { title: 'LeadFlow', tag: 'AI • CRM', text: 'Lead qualification and workflow dashboard concept with a clean operator-first experience.', metric: '92% workflow clarity' },
-  { title: 'Portfolio OS', tag: 'UI/UX', text: 'A personal command center that turns projects, skills and proof-of-work into a recruiter-friendly story.', metric: '3D interaction layer' },
-  { title: 'Growth Lab', tag: 'Marketing', text: 'Campaign thinking, content systems and conversion-focused experiments presented as a visual workspace.', metric: '12 experiment ideas' },
-  { title: 'SalesPulse', tag: 'Business', text: 'A sales pipeline concept for tracking leads, follow-ups, priority and conversion signals.', metric: 'Pipeline visibility' },
-  { title: 'CampaignOS', tag: 'Growth', text: 'A campaign planning workspace connecting audience, message, creative and measurement.', metric: 'End-to-end planning' },
+  { title: 'LeadFlow', tag: 'AI • CRM', text: 'Lead qualification and workflow dashboard concept with a clean operator-first experience.', metric: 'Core showcase' },
+  { title: 'Portfolio OS', tag: 'UI/UX', text: 'A personal command center turning projects, skills and proof-of-work into a recruiter-friendly story.', metric: '3D interaction layer' },
+  { title: 'Growth Lab', tag: 'Growth', text: 'Campaign thinking, content systems and conversion-focused experiments presented as a visual workspace.', metric: 'Growth thinking' },
   { title: 'AI Resume Studio', tag: 'AI • Product', text: 'A concept for turning raw experience into structured, recruiter-friendly application assets.', metric: 'Recruiter-first UX' },
-  { title: 'ClientDesk', tag: 'UI/UX', text: 'A lightweight client communication dashboard concept focused on briefs, tasks and status.', metric: 'Clear handoffs' },
-  { title: 'ContentPilot', tag: 'AI • Growth', text: 'An AI-assisted content workflow from idea capture to publishing checklist and iteration.', metric: 'Content workflow' },
-  { title: 'Landing Lab', tag: 'Web', text: 'Conversion-oriented landing page experiments exploring hierarchy, CTA placement and visual storytelling.', metric: 'Conversion thinking' },
-  { title: 'WebAudit', tag: 'Web', text: 'A diagnostic concept for reviewing usability, responsiveness, SEO basics and interaction quality.', metric: 'UX audit framework' },
-  { title: 'IdeaForge', tag: 'Product', text: 'A rapid product ideation board for turning vague problems into testable feature concepts.', metric: 'Fast prototyping' },
-  { title: 'RecruiterView', tag: 'UI/UX', text: 'A hiring-oriented portfolio interface designed around the questions recruiters actually need answered.', metric: '30-second scan' },
+  { title: 'Landing Lab', tag: 'Web', text: 'Conversion-oriented landing page experiments exploring hierarchy, CTA placement and visual storytelling.', metric: 'Web + UI/UX' },
 ]
 
 const capabilities = [
@@ -35,7 +28,7 @@ function Home() {
   const [mounted, setMounted] = useState(false)
   const [filter, setFilter] = useState('All')
   useEffect(() => setMounted(true), [])
-  const stats = useMemo(() => [['12', 'Portfolio concepts'], ['04', 'Core capabilities'], ['01', 'AI studio'], ['30s', 'Recruiter scan']], [])
+  const stats = useMemo(() => [['05', 'Selected projects'], ['04', 'Core capabilities'], ['01', 'AI studio'], ['30s', 'Recruiter scan']], [])
   const filtered = filter === 'All' ? projects : projects.filter(p => p.tag.includes(filter))
   const generate = () => { if (!prompt.trim()) return; setResult(`For “${prompt.trim()}”, I’d build a focused workflow: define the audience → map the user journey → prototype the highest-impact screen → test one measurable outcome → iterate.`) }
 
@@ -52,28 +45,16 @@ function Home() {
         <div className="hero-actions"><a href="#work" className="primary">Explore selected work <span>↗</span></a><button className="secondary" onClick={()=>setAiOpen(true)}>Ask my AI <span>✦</span></button></div>
         <div className="mini-proof"><span>●</span> Open to internships & entry-level roles <b>•</b> Digital / Growth / BD / Web</div>
       </div>
-      <div className="hero-visual"><div className="visual-card glass">
-        <div className="card-top"><span>01 / DIGITAL PROFILE</span><span>LIVE</span></div><Orb/>
-        <div className="orbit-label one">STRATEGY</div><div className="orbit-label two">DESIGN</div><div className="orbit-label three">BUILD</div>
-        <div className="profile-float glass"><span className="tiny-dot"/><div><b>Prajjwal Patel</b><small>Digital Growth × Technology</small></div></div>
-        <div className="hero-signal glass"><span>FOCUS</span><strong>Ideas → Systems → Outcomes</strong></div>
-        <div className="scroll-hint">DRAG THE ENERGY <span>↘</span></div>
-      </div></div>
+      <div className="hero-visual"><div className="visual-card glass"><div className="card-top"><span>01 / DIGITAL PROFILE</span><span>LIVE</span></div><Orb/><div className="orbit-label one">STRATEGY</div><div className="orbit-label two">DESIGN</div><div className="orbit-label three">BUILD</div><div className="profile-float glass"><span className="tiny-dot"/><div><b>Prajjwal Patel</b><small>Digital Growth × Technology</small></div></div><div className="hero-signal glass"><span>FOCUS</span><strong>Ideas → Systems → Outcomes</strong></div><div className="scroll-hint">DRAG THE ENERGY <span>↘</span></div></div></div>
     </section>
 
     <section className="ticker"><div>UI/UX <span>✦</span> DIGITAL GROWTH <span>✦</span> BUSINESS DEVELOPMENT <span>✦</span> WEB TECHNOLOGY <span>✦</span> AI WORKFLOWS <span>✦</span> PRODUCT THINKING <span>✦</span> UI/UX <span>✦</span></div></section>
 
-    <section className="recruiter-strip section-grid">
-      <div className="scan-card glass"><span className="kicker">/ 10-SECOND SNAPSHOT</span><h3>What a recruiter should know <em>before scrolling.</em></h3><p>Computer Science graduate • practical project builder • comfortable across business + technology • actively looking for the right first opportunity.</p></div>
-      <div className="scan-points"><div><span>01</span><strong>Think</strong><small>Problem → user → outcome</small></div><div><span>02</span><strong>Design</strong><small>Clear interfaces & flows</small></div><div><span>03</span><strong>Build</strong><small>Web + AI prototypes</small></div></div>
-    </section>
+    <section className="recruiter-strip section-grid"><div className="scan-card glass"><span className="kicker">/ 10-SECOND SNAPSHOT</span><h3>What a recruiter should know <em>before scrolling.</em></h3><p>Computer Science graduate • practical project builder • comfortable across business + technology • actively looking for the right first opportunity.</p></div><div className="scan-points"><div><span>01</span><strong>Think</strong><small>Problem → user → outcome</small></div><div><span>02</span><strong>Design</strong><small>Clear interfaces & flows</small></div><div><span>03</span><strong>Build</strong><small>Web + AI prototypes</small></div></div></section>
 
     <section id="overview" className="section overview"><div className="section-head"><div><span className="kicker">/ 01 — PROFILE</span><h2>A fresher with a <em>builder's</em> mindset.</h2></div><p>I enjoy turning ambiguous problems into clear interfaces, workflows and experiments that people can actually use.</p></div><div className="stats">{stats.map(([n,l])=><div className="stat glass" key={l}><strong>{n}</strong><span>{l}</span></div>)}</div></section>
 
-    <section id="work" className="section"><div className="section-head"><div><span className="kicker">/ 02 — SELECTED WORK</span><h2>Projects that show<br/><em>how I think.</em></h2></div><span className="count">{String(filtered.length).padStart(2,'0')} / 12</span></div>
-      <div className="filter-row">{['All','AI','UI/UX','Growth','Web'].map(item=><button key={item} className={filter===item?'filter active-filter':'filter'} onClick={()=>setFilter(item)}>{item}</button>)}</div>
-      <div className="projects">{filtered.map((p,i)=><article className="project glass" key={p.title}><div className="project-no">{String(i+1).padStart(2,'0')}</div><div className="project-main"><div className="project-meta"><span className="project-tag">{p.tag}</span><span className="status">CONCEPT</span></div><h3>{p.title}</h3><p>{p.text}</p><span className="metric">↗ {p.metric}</span></div><div className="project-art"><div className={`art-grid art-${i%3}`}><span/><span/><span/><span/></div><span className="arrow">↗</span></div></article>)}</div>
-    </section>
+    <section id="work" className="section"><div className="section-head"><div><span className="kicker">/ 02 — SELECTED WORK</span><h2>Five focused projects.<br/><em>More depth, less noise.</em></h2></div><span className="count">{String(filtered.length).padStart(2,'0')} / 05</span></div><div className="filter-row">{['All','AI','UI/UX','Growth','Web'].map(item=><button key={item} className={filter===item?'filter active-filter':'filter'} onClick={()=>setFilter(item)}>{item}</button>)}</div><div className="projects">{filtered.map((p,i)=><article className="project glass" key={p.title}><div className="project-no">{String(i+1).padStart(2,'0')}</div><div className="project-main"><div className="project-meta"><span className="project-tag">{p.tag}</span><span className="status">CONCEPT</span></div><h3>{p.title}</h3><p>{p.text}</p><span className="metric">↗ {p.metric}</span></div><div className="project-art"><div className={`art-grid art-${i%3}`}><span/><span/><span/><span/></div><span className="arrow">↗</span></div></article>)}</div><div className="projects-note glass"><span>CURATED, NOT CROWDED</span><p>Five projects are intentionally selected to show range across AI, UI/UX, growth and web. Concept work is clearly labelled.</p></div></section>
 
     <section className="proof section-grid"><div className="proof-head"><span className="kicker">/ WHY THIS PORTFOLIO</span><h2>Designed to answer the<br/><em>hiring questions.</em></h2></div><div className="proof-grid"><div className="proof-card glass"><span>01</span><h3>Can he think?</h3><p>Projects show problem framing, audience awareness and workflow thinking — not only visuals.</p></div><div className="proof-card glass"><span>02</span><h3>Can he build?</h3><p>Web projects demonstrate responsive UI, interaction design and practical technical execution.</p></div><div className="proof-card glass"><span>03</span><h3>Can he grow?</h3><p>Growth and BD concepts show curiosity about leads, campaigns, conversion and communication.</p></div><div className="proof-card glass"><span>04</span><h3>Can he adapt?</h3><p>AI workflows show experimentation with modern tools without pretending concepts are client work.</p></div></div></section>
 
