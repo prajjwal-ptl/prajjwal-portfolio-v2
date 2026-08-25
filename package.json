@@ -1,0 +1,6 @@
+{
+  "name":"prajjwal-portfolio-v2","private":true,"type":"module",
+  "scripts":{"dev":"vite dev --port 3000","build":"vite build","preview":"vite preview","test":"vitest run"},
+  "dependencies":{"@macaly/bridge":"^0.1.5","@tailwindcss/vite":"^4.2.2","@tanstack/react-router":"^1.169.2","@tanstack/react-start":"^1.167.65","@tanstack/router-plugin":"^1.167.35","react":"^19.2.4","react-dom":"^19.2.4","tailwindcss":"^4.2.2"},
+  "devDependencies":{"@vitejs/plugin-react":"^6.0.3","@types/react":"^19.2.14","@types/react-dom":"^19.2.3","typescript":"~7.0.2","vite":"^8.1.5","vite-tsconfig-paths":"^6.1.1"}
+}
