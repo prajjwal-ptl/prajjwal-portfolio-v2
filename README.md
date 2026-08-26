@@ -7,7 +7,7 @@ A recruiter-focused portfolio built around digital growth, business development,
 - Premium dark / glassmorphism visual system
 - Animated 3D-style hero orb and tool orbit
 - Recruiter 10-second snapshot
-- 12 portfolio project concepts
+- 5 selected portfolio projects
 - AI / UI-UX / Growth / Web project filters
 - Skills and capability dashboard
 - Generative AI Studio concept with workflow generation
@@ -16,7 +16,7 @@ A recruiter-focused portfolio built around digital growth, business development,
 
 ## Important portfolio note
 
-The 12 showcased projects are explicitly labelled as concepts where appropriate. They are intended to demonstrate product thinking, UI/UX, growth thinking and technical direction rather than claim unverified client work.
+The showcased projects are explicitly labelled as concepts where appropriate. They demonstrate product thinking, UI/UX, growth thinking and technical direction rather than claim unverified client work.
 
 ## Stack
 
